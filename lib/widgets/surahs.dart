@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quran_app/screen/quranScreen.dart';
 import 'package:quran_app/to_arabic_no_converter.dart';
 
 import '../constants.dart';
@@ -19,7 +20,13 @@ class _SurahsOfQuranState extends State<SurahsOfQuran> {
       itemBuilder: (context, index) {
         return ListTile(
           contentPadding: EdgeInsets.symmetric(horizontal: 16),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return Quran(page: arabicSurahName[index]['page']-1);
+              },
+            ));
+          },
           leading: Container(
             padding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
             decoration: const BoxDecoration(

@@ -90,7 +90,9 @@ flutter:
     - family: HafsQuran
       fonts:
         - asset: assets/fonts/HafsSmart_08.ttf
-
+    - family: DecoType
+      fonts:
+        - asset: assets/fonts/Deco Type.ttf
     - family: MeQuran
       fonts:
         - asset: assets/fonts/me_quran.ttf

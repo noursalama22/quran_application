@@ -1,12 +1,12 @@
 import 'package:quran_app/models/ayah.dart';
 
-class Page {
+class QPage {
   late List<Ayah> ayahs;
   late int pageNum;
   late List<int> surahNum;
   late List<String> suraName;
 
-  Page(
+  QPage(
       {required this.ayahs,
       required this.pageNum,
       required this.suraName,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/assest.dart';
 import 'package:quran_app/screen/pageContentScreen.dart';
+import 'package:quran_app/screen/quranScreen.dart';
 import 'package:quran_app/to_arabic_no_converter.dart';
 
 class PagesOfQuran extends StatefulWidget {
@@ -13,20 +14,10 @@ class PagesOfQuran extends StatefulWidget {
 class _PagesOfQuranState extends State<PagesOfQuran> {
   late List<dynamic> pages = [];
 
-  void loadJsonData() async {
-    pages = await Asset().loadJsonData();
-    setState(() {
-      print(pages.length);
-      // pages.forEach((element) {
-      //   // print(element.ayahs[0].aya_text_emlaey);
-      // });
-    });
-  }
-
   @override
   void initState() {
     super.initState();
-    loadJsonData();
+    pages = Asset().allpages;
   }
 
   @override
@@ -38,9 +29,8 @@ class _PagesOfQuranState extends State<PagesOfQuran> {
           onTap: () {
             Navigator.push(context, MaterialPageRoute(
               builder: (context) {
-                return PageContentScreen(
-                  pageNumber: index + 1,
-                  pages: pages,
+                return Quran(
+                  page: index,
                 );
               },
             ));
